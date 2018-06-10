@@ -34,14 +34,7 @@
 
   <script type="text/javascript">
     $(function () {
-      var url = window.location.search.match(/url=([^&]+)/);
-      if (url && url.length > 1) {
-        url = decodeURIComponent(url[1]);
-      } else {
-        //url = "http://localhost:8080/jrys-bms/v2/api-docs";
-    	 // url = "http://192.168.10.39:8080/jrys-bms/v2/api-docs";
-          url = "http://localhost:8080/bms/v2/api-docs";
-      }
+      var url = "/v2/api-docs";
 
       hljs.configure({
         highlightSizeThreshold: 5000
@@ -53,6 +46,7 @@
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
+        validatorUrl: undefined,
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){

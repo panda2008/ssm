@@ -18,7 +18,9 @@
     <param-name>logbackConfigLocation</param-name>
     <param-value>classpath:logback.xml</param-value>
   </context-param>
-
+  <listener>
+    <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
+  </listener>
 
   <!-- 解决post乱码 -->
   <filter>
